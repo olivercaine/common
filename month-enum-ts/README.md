@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/goldenbearkin/typescript-library-boilerplate.svg?branch=master)](https://travis-ci.org/goldenbearkin/typescript-library-boilerplate)
 [![Coverage Status](https://coveralls.io/repos/github/goldenbearkin/typescript-library-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/goldenbearkin/typescript-library-boilerplate?branch=master)
 
-# TypeScript Library Boilerplate
+# TypeScript Months enum
 
-A simple tree-shakable TypeScript library boilerplate
+A simple TypeScript enum containing the months of the year
 
 # Stacks
 - **unit test**: mocha, chai
