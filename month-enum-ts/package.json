@@ -1,6 +1,6 @@
 {
   "name": "@common/month-enum-ts",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A simple months enum",
   "main": "month-enum-ts.bundle.js",
   "jsnext:main": "index.js",
@@ -8,7 +8,7 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "nyc --include lib/**/*.ts --extension .ts --require ts-node/register mocha lib/**/*.spec.ts && shx rm -rf ./coverage",
-    "test:watch": "mocha -w --compilers ts:ts-node/register lib/**/*.spec.ts",
+    "test:watch": "mocha -w --compilers ts:ts-node/register 'lib/**/*.spec.ts'",
     "build": "rimraf dist && tsc -p tsconfig-esm.json && rollup -c rollup.config.js dist/index.js > dist/month-enum-ts.bundle.js && cp package.json dist && ts-node tools/cleanup.ts && cp README.md dist",
     "lint": "tslint -c tslint.json lib/**/*.ts",
     "prepush": "npm test",
