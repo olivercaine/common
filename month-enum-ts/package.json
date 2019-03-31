@@ -1,6 +1,6 @@
 {
   "name": "@common/month-enum-ts",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple months enum",
   "main": "month-enum-ts.bundle.js",
   "jsnext:main": "index.js",

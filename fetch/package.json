@@ -1,7 +1,7 @@
 {
   "name": "@common/fetch",
-  "version": "0.0.0",
-  "description": "A simple tree-shakable TypeScript library boilerplate",
+  "version": "1.0.0",
+  "description": "Some simple HTTP fetch functions",
   "main": "typescript-library-boilerplate.bundle.js",
   "jsnext:main": "index.js",
   "module": "index.js",
