@@ -1,7 +1,7 @@
 {
-  "name": "typescript-library-boilerplate",
-  "version": "0.0.0",
-  "description": "A simple tree-shakable TypeScript library boilerplate",
+  "name": "@common/utils-array",
+  "version": "1.0.0",
+  "description": "A set of utility methods for arrays",
   "main": "typescript-library-boilerplate.bundle.js",
   "jsnext:main": "index.js",
   "module": "index.js",
