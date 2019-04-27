@@ -11,6 +11,6 @@ export function indexArray<T>(array: T[]): IDictionary<T> {
     return index;
 }
 
-export function cloneArray(array) {
+export function cloneArray<T>(array): T[] {
   return array.map((a) => ({...a}));
 }
