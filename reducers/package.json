@@ -1,8 +1,8 @@
 {
-  "name": "typescript-library-boilerplate",
-  "version": "0.0.0",
-  "description": "A simple tree-shakable TypeScript library boilerplate",
-  "main": "typescript-library-boilerplate.bundle.js",
+  "name": "@common/reducers",
+  "version": "1.0.0",
+  "description": "A basic reducer for logging in a user",
+  "main": "reducers.bundle.js",
   "jsnext:main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
