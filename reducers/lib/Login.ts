@@ -4,9 +4,9 @@
 // ------------------------------------
 // Action names
 // ------------------------------------
-export const LOGIN_REQUEST = 'LOGIN_REQUEST';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const SHOULD_LOGIN = 'SHOULD_LOGIN';
+export const DID_LOGIN_SUCCESSFULLY = 'DID_LOGIN_SUCCESSFULLY';
+export const DID_FAIL_LOGIN = 'DID_FAIL_LOGIN';
 
 // ------------------------------------
 // Definitions
@@ -29,23 +29,23 @@ export interface IUser {
 }
 
 export type LoginAction =
-    | { type: 'LOGIN_REQUEST'; payload: ILoginData }
-    | { type: 'LOGIN_SUCCESS'; payload: IUser }
-    | { type: 'LOGIN_FAILED'; payload: string };
+    | { type: 'SHOULD_LOGIN'; payload: ILoginData }
+    | { type: 'DID_LOGIN_SUCCESSFULLY'; payload: IUser }
+    | { type: 'DID_FAIL_LOGIN'; payload: string };
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function loginRequest(payload: ILoginData): LoginAction {
-    return { type: LOGIN_REQUEST, payload };
+export function shouldLogin(payload: ILoginData): LoginAction {
+    return { type: SHOULD_LOGIN, payload };
 }
 
-export function loginSuccess(payload: IUser): LoginAction {
-    return { type: LOGIN_SUCCESS, payload };
+export function didLoginSuccessfully(payload: IUser): LoginAction {
+    return { type: DID_LOGIN_SUCCESSFULLY, payload };
 }
 
-export function loginFailed(payload: string): LoginAction {
-    return { type: LOGIN_FAILED, payload };
+export function didFailLogin(payload: string): LoginAction {
+    return { type: DID_FAIL_LOGIN, payload };
 }
 
 // ------------------------------------
@@ -58,11 +58,11 @@ const initialState: ILoginState = {
 };
 export function loginReducer(state = initialState, action: LoginAction): ILoginState {
   switch (action.type) {
-    case LOGIN_REQUEST:
+    case SHOULD_LOGIN:
       return {...state, isLoading: true};
-    case LOGIN_SUCCESS:
+    case DID_LOGIN_SUCCESSFULLY:
       return {...state, isLoading: false, user: action.payload};
-    case LOGIN_FAILED:
+    case DID_FAIL_LOGIN:
       return {...state, isLoading: false, error: action.payload};
     default:
       return state;
