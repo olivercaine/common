@@ -1,15 +1,5 @@
 import { IAction, IActionWithPayload } from './ActionCreator';
 
-/* --------------------------------------------------
-This Redux component is based on *interfaces*.
-
-Pros:
-    - Good type checking when setting state from payload in reducer
-
-Cons:
-    - "payload" and "type" are barely repeated
--------------------------------------------------- */
-
 // ------------------------------------
 // Action names
 // ------------------------------------
@@ -19,15 +9,9 @@ export const DID_GET_TOKEN = 'DID_GET_TOKEN';
 // ------------------------------------
 // Action definitions
 // ------------------------------------
-export interface IShouldGetTokenAction extends IAction<typeof SHOULD_DELETE_TOKEN> { }
-
-export interface IDidGetTokenAction extends IActionWithPayload<typeof DID_GET_TOKEN, string> {
-  payload: string;
-}
-
 export type TokenAction =
-  | IShouldGetTokenAction
-  | IDidGetTokenAction;
+  | IAction<typeof SHOULD_DELETE_TOKEN>
+  | IActionWithPayload<typeof DID_GET_TOKEN, string>;
 
 // ------------------------------------
 // Domain & State

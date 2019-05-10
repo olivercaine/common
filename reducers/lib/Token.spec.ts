@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { createAction } from './ActionCreator';
-import { DID_GET_TOKEN, ITokenState, IUser, tokenReducer } from './Token';
+import { DID_GET_TOKEN, ITokenState, tokenReducer } from './Token';
 
 describe('Given no token exists', () => {
     describe('When receiving a token=', () => {

@@ -1,12 +1,4 @@
-/* --------------------------------------------------
-This Redux component is based on *types*.
-
-Pros:
-  - Good type checking when setting state from payload in reducer
-
-Cons:
-  - "payload" and "type" and written repeatedly
--------------------------------------------------- */
+import { IAction, IActionWithPayload } from './ActionCreator';
 
 // ------------------------------------
 // Action names
@@ -19,9 +11,9 @@ export const DID_FAIL_LOGIN = 'DID_FAIL_LOGIN';
 // Action definitions
 // ------------------------------------
 export type LoginAction =
-  | { type: typeof SHOULD_LOGIN; }
-  | { type: typeof DID_LOGIN_SUCCESSFULLY; payload: IUser }
-  | { type: typeof DID_FAIL_LOGIN; payload: string };
+  | IAction<typeof SHOULD_LOGIN>
+  | IActionWithPayload<typeof DID_LOGIN_SUCCESSFULLY, IUser>
+  | IActionWithPayload<typeof DID_FAIL_LOGIN, string>;
 
 // ------------------------------------
 // Domain & State
