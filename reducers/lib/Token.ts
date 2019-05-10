@@ -10,31 +10,23 @@ export const SHOULD_DELETE_TOKEN = 'SHOULD_DELETE_TOKEN';
 // Action definitions
 // ------------------------------------
 export type TokenAction =
-| IActionWithPayload<typeof DID_GET_TOKEN, string>
+| IActionWithPayload<typeof DID_GET_TOKEN, string | null>
 | IAction<typeof SHOULD_DELETE_TOKEN>;
 
 // ------------------------------------
 // Domain & State
 // ------------------------------------
-export interface ITokenState {
-  token: string | undefined;
-}
-
-export const initialState: ITokenState = {
-  token: undefined,
-};
+export const initialState: string | null = null;
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-export function tokenReducer(state: ITokenState = initialState, action: TokenAction): ITokenState {
+export function tokenReducer(state: string | null = initialState, action: TokenAction): string | null {
   switch (action.type) {
     case DID_GET_TOKEN:
-      return {...state, token: action.payload };
+      return action.payload;
     case SHOULD_DELETE_TOKEN:
-      const copy = {...state};
-      delete copy.token;
-      return copy;
+      return null;
     default:
       return state;
   }
