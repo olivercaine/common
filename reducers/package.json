@@ -1,6 +1,6 @@
 {
   "name": "@common/reducers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A basic reducer for logging in a user",
   "main": "reducers.bundle.js",
   "jsnext:main": "index.js",
