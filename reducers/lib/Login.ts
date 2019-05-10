@@ -1,5 +1,30 @@
+/* --------------------------------------------------
+This Redux component is based on *types*.
+
+Pros:
+  - Good type checking when setting state from payload in reducer
+
+Cons:
+  - "payload" and "type" and written repeatedly
+-------------------------------------------------- */
+
 // ------------------------------------
-// Domain
+// Action names
+// ------------------------------------
+export const SHOULD_LOGIN = 'SHOULD_LOGIN';
+export const DID_LOGIN_SUCCESSFULLY = 'DID_LOGIN_SUCCESSFULLY';
+export const DID_FAIL_LOGIN = 'DID_FAIL_LOGIN';
+
+// ------------------------------------
+// Action definitions
+// ------------------------------------
+export type LoginAction =
+  | { type: typeof SHOULD_LOGIN; }
+  | { type: typeof DID_LOGIN_SUCCESSFULLY; payload: IUser }
+  | { type: typeof DID_FAIL_LOGIN; payload: string };
+
+// ------------------------------------
+// Domain & State
 // ------------------------------------
 export interface IUser {
   email: string;
@@ -7,21 +32,6 @@ export interface IUser {
   profilePicture: string;
 }
 
-// ------------------------------------
-// Actions
-// ------------------------------------
-export const SHOULD_LOGIN = 'SHOULD_LOGIN';
-export const DID_LOGIN_SUCCESSFULLY = 'DID_LOGIN_SUCCESSFULLY';
-export const DID_FAIL_LOGIN = 'DID_FAIL_LOGIN';
-
-export type LoginAction =
-  | { type: typeof SHOULD_LOGIN; }
-  | { type: typeof DID_LOGIN_SUCCESSFULLY; payload: IUser }
-  | { type: typeof DID_FAIL_LOGIN; payload: string };
-
-// ------------------------------------
-// State & Reducer
-// ------------------------------------
 export interface ILoginState {
   error: string | undefined;
   user: IUser | undefined;
@@ -34,6 +44,9 @@ export const initialState: ILoginState = {
   user: undefined,
 };
 
+// ------------------------------------
+// Reducer
+// ------------------------------------
 export function loginReducer(state: ILoginState = initialState, action: LoginAction): ILoginState {
   switch (action.type) {
     case SHOULD_LOGIN:
