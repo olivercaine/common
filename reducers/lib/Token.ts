@@ -16,6 +16,7 @@ export type TokenAction =
 // ------------------------------------
 // Domain & State
 // ------------------------------------
+// tslint:disable-next-line
 export const initialState: string | null = null;
 
 // ------------------------------------
@@ -24,8 +25,9 @@ export const initialState: string | null = null;
 export function tokenReducer(state: string | null = initialState, action: TokenAction): string | null {
   switch (action.type) {
     case DID_GET_TOKEN:
-      return action.payload;
+    return action.payload;
     case SHOULD_DELETE_TOKEN:
+      // tslint:disable-next-line
       return null;
     default:
       return state;
