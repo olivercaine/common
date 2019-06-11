@@ -13,5 +13,5 @@ Change the name in package.json and package-lock.json to e.g. @common/utils
 Then to install in a project:
 
 ```
-npm i @common/month-enum-ts@file:./common/month-enum-ts
+npm i @common/month-enum-ts@file:./common/month-enum-ts --save
 ```
