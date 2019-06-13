@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { arrayToNumberKeyMap, INumberKeyMap } from './ArrayUtils';
+import { INumericalIndexMap, toNumericalIndexMap } from './ArrayUtils';
 
 describe('Given I have an array of objects with an id', () => {
     describe('When creating an index', () => {
@@ -23,7 +23,7 @@ describe('Given I have an array of objects with an id', () => {
                 },
             ];
 
-            const indexedArray: INumberKeyMap<IPerson> = arrayToNumberKeyMap<IPerson>(array);
+            const indexedArray: INumericalIndexMap<IPerson> = toNumericalIndexMap<IPerson>(array);
 
             expect(indexedArray.get(1)!.name).to.equal('Joe');
             expect(indexedArray.get(3)!.name).to.equal('Sam');
