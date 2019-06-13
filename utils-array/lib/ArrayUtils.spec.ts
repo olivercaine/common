@@ -33,24 +33,24 @@ describe('Given I have an array of objects with an id', () => {
 });
 
 describe('When searching for an entity by id', () => {
-    it('Then the correct entity is returned', () => {
-      const needle = {
-        id: 123,
-        name: 'ollie',
-      };
-      const haystack = [
-        {
-          id: 41,
-          name: 'john',
-        },
-        needle, {
-          id: 16,
-          name: 'sam',
-        },
-      ];
+      it('Then the correct entity is returned', () => {
+          const needle = {
+            id: 123,
+            name: 'ollie',
+          };
+          const haystack = [
+            {
+              id: 41,
+              name: 'john',
+            },
+            needle, {
+              id: 16,
+              name: 'sam',
+            },
+          ];
 
-      const result = findById(haystack, needle.id);
+          const result = findById(haystack, needle.id);
 
-      expect(result).to.equal(needle);
-    });
-  });
+          expect(result).to.equal(needle);
+      });
+});
