@@ -15,6 +15,13 @@ export function cloneArray<T>(array): T[] {
   return array.map((a) => ({...a}));
 }
 
+export const findById = (array: any[], id: number): any => {
+  // tslint:disable-next-line
+  for (var i = 0; i < array.length; i++) {
+      if (array[i].id === id) { return array[i]; }
+  }
+};
+
 // export interface INumericalIndexMap<T> extends Map<number, T> {
 //   // Using map instead of array or object it's ~50% quicker:
 //   // https://gist.github.com/jung-kim/83676b2310c7c2a9c3d8
