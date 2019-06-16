@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { createAction } from './ActionCreator';
-import { DID_GET_TOKEN, SHOULD_DELETE_TOKEN, tokenReducer } from './Token';
+import { DID_GET_TOKEN, SHOULD_DELETE_TOKEN, tokenReducer } from './TokenReducer';
 
 describe('Given a user', () => {
     describe('When receiving a token', () => {

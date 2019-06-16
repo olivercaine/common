@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { createAction } from './ActionCreator';
-import { DID_LOGIN_SUCCESSFULLY, ILoginState, IUser, loginReducer } from './Login';
+import { DID_LOGIN_SUCCESSFULLY, ILoginState, IUser, loginReducer } from './LoginReducer';
 
 describe('Given no user exists', () => {
     describe('When successfully logging in', () => {
