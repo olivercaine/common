@@ -1,6 +1,6 @@
 import { createTransport, SendMailOptions } from 'nodemailer';
 
-export function sendEmail(auth, mailOptions: SendMailOptions) {
+export function SendEmail(auth, mailOptions: SendMailOptions) {
 
     const transporter = createTransport({
         auth,
