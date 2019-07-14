@@ -1,8 +1,9 @@
 export default {
   format: 'umd',
-  moduleName: 'typescript-library-boilerplate',
+  moduleName: '@common/emailer',
   external: [
     // put some third party libraries here
+    'nodemailer'
   ],
   onwarn: ( warning ) => {
       const skip_codes = [

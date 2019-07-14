@@ -5,7 +5,7 @@ import { DID_LOGIN_SUCCESSFULLY, ILoginState, IUser, loginReducer } from './Logi
 describe('Given no user exists', () => {
     describe('When successfully logging in', () => {
         it('Then user should exist on state', () => {
-            // Given
+            // Arrange
             const state: ILoginState = {
                 error: undefined,
                 isLoading: false,
@@ -18,10 +18,10 @@ describe('Given no user exists', () => {
             };
             const action = createAction(DID_LOGIN_SUCCESSFULLY, payload);
 
-            // When
+            // Act
             const newState = loginReducer(state, action);
 
-            // Then
+            // Assert
             expect(newState.user!.email).to.equal('me@mail.com');
         });
     });
