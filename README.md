@@ -1,17 +1,24 @@
 # Common
 
-A repo full of commonly used modules.
+*A repo full of commonly used modules.*
 
-To add a new module to the common repo:
+To add a new module named "utils":
+
+1. Seed the module
 
 ```sh
-git subtree add --prefix=[module-name] https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
+git subtree add --prefix=utils https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
 ```
 
-Change the name in package.json and package-lock.json to e.g. @common/utils
+2. Update the package name in package.json and package-lock.json
 
-Then to install in a project:
+```json
+"name": "@common/utils",
+```
 
+3. Install the module in a project:
+
+```sh
+npm i @common/utils@file:./common/utils --save
 ```
-npm i @common/month-enum-ts@file:./common/month-enum-ts --save
-```
+
