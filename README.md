@@ -19,6 +19,6 @@ git subtree add --prefix=utils https://github.com/olivercaine/typescript-library
 3. Install the module in a project:
 
 ```sh
-npm i @common/utils@file:./common/utils --save
+npm i @common/utils@file:common/utils --save
+yarn add @common/emailer@file:common/emailer --save
 ```
-
