@@ -13,7 +13,7 @@ describe('Given a date', () => {
   });
 });
 
-describe.only('When calculating number of years between dates', () => {
+describe('When calculating number of years between dates', () => {
   describe('Given the dates are just under a year apart', () => {
     it('Then the number of years should be 0', () => {
       expect(fullYearsBetweenDates(new Date(2000, 1, 10), new Date(2001, 1, 9))).to.equal(0);
