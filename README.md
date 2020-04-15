@@ -23,8 +23,12 @@ npm i @common/utils@file:common/utils --save
 yarn add @common/emailer@file:common/emailer --save
 ```
 
-4. Configure git to automatically pull the submodules
+4. Pull updates to the module using:
 
 ```sh
-git config --global submodule.recurse true
+git submodule update --recursive --remote
 ```
+
+5. Configure git to automatically pull the submodules:
+
+// TODO
