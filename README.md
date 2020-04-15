@@ -10,7 +10,7 @@ To add a new module named "utils":
 git subtree add --prefix=utils https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
 ```
 
-2. Update the package name in package.json and package-lock.json
+2. Update the package name in package.json and package-lock.json:
 
 ```json
 "name": "@common/utils",
