@@ -22,3 +22,9 @@ git subtree add --prefix=utils https://github.com/olivercaine/typescript-library
 npm i @common/utils@file:common/utils --save
 yarn add @common/emailer@file:common/emailer --save
 ```
+
+4. Configure git to automatically pull the submodules
+
+```sh
+git config --global submodule.recurse true
+```
