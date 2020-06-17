@@ -13,7 +13,7 @@ export const urlToRedirectTo = (domain: string, hostUrl: string): string | undef
 };
 
 export const redirect = (window, destinationUrl: string): void => {
-    if (urlToRedirectTo !== undefined) {
+    if (destinationUrl !== undefined) {
         window.location.replace(destinationUrl);
     }
 };
