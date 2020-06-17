@@ -13,8 +13,8 @@ export const urlToRedirectTo = (domain: string, url: string): string | undefined
 };
 
 export class WindowRedirector {
-    private window: any | undefined;
-    constructor(window: any | undefined) {
+    private window: Window;
+    constructor(window: Window) {
         this.window = window;
     }
     public redirect(domain: string, currentUrl: string) {
