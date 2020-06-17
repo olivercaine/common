@@ -1,26 +1,19 @@
-export const urlToRedirectTo = (domain: string, url: string): string | undefined => {
-    if (!url.includes(domain)) { return; }
+export const urlToRedirectTo = (domain: string, hostUrl: string): string | undefined => {
+    if (!hostUrl.includes(domain)) { return; }
 
-    if (url.startsWith('http://')) {
-        url = url.replace('http://', 'https://');
+    if (hostUrl.startsWith('http://')) {
+        hostUrl = hostUrl.replace('http://', 'https://');
     }
 
-    if (url.includes('://www.')) {
-        url = url.replace('://www.', '://');
+    if (hostUrl.includes('://www.')) {
+        hostUrl = hostUrl.replace('://www.', '://');
     }
     // console.log('Redirecting to: ' + url);
-    return url;
+    return hostUrl;
 };
 
-export class WindowRedirector {
-    private window: Window;
-    constructor(window: Window) {
-        this.window = window;
+export const redirect = (window, destinationUrl: string): void => {
+    if (urlToRedirectTo !== undefined) {
+        window.location.replace(destinationUrl);
     }
-    public redirect(domain: string, currentUrl: string) {
-        const destinationUrl = urlToRedirectTo(domain, currentUrl);
-        if (destinationUrl !== undefined) {
-            this.window.location.replace(destinationUrl);
-        }
-    }
-}
+};

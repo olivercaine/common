@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { urlToRedirectTo, WindowRedirector } from './Redirect';
+import { urlToRedirectTo } from './Redirect';
 
 describe('Given a non-local URL', () => {
   it('Then it should redirect if need be', () => {
