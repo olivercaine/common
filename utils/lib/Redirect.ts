@@ -1,15 +1,17 @@
 export const urlToRedirectTo = (domain: string, hostUrl: string): string | undefined => {
     if (!hostUrl.includes(domain)) { return; }
 
-    if (hostUrl.startsWith('http://')) {
-        hostUrl = hostUrl.replace('http://', 'https://');
+    let redirectUrl = hostUrl;
+
+    if (redirectUrl.startsWith('http://')) {
+        redirectUrl = redirectUrl.replace('http://', 'https://');
     }
 
-    if (hostUrl.includes('://www.')) {
-        hostUrl = hostUrl.replace('://www.', '://');
+    if (redirectUrl.includes('://www.')) {
+        redirectUrl = redirectUrl.replace('://www.', '://');
     }
     // console.log('Redirecting to: ' + url);
-    return hostUrl;
+    return redirectUrl !== hostUrl ? redirectUrl : undefined;
 };
 
 export const redirect = (window, destinationUrl: string): void => {
