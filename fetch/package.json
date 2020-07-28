@@ -54,5 +54,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.4"
   }
 }
