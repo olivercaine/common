@@ -1,5 +1,5 @@
 import { fetch, Request } from 'cross-fetch';
-import { merge } from 'merge-anything'
+import { merge } from 'merge-anything';
 
 // Based on https://www.carlrippon.com/fetch-with-async-await-and-typescript/
 
@@ -21,9 +21,11 @@ export interface IHttpResponse<T> extends Response { parsedBody?: T; }
 // CRUD
 export async function get<T>(
     path: string,
-    args: RequestInit = { method: 'get' },
+    argsDefault: RequestInit = { method: 'get' },
+    argsExtra?: object,
 ): Promise<IHttpResponse<T>> {
-    return http<T>(new Request(path, args));
+    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra); }
+    return http<T>(new Request(path, argsDefault));
 }
 
 export async function post<T>(
