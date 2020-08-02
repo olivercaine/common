@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.4",
+    "merge-anything": "^3.0.5",
     "ts-deepmerge": "^1.0.5"
   }
 }

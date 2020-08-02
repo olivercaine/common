@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import merge from "ts-deepmerge";
+import { merge } from 'merge-anything'
 
 describe('Given two headers', () => {
     describe('When merging them together', () => {

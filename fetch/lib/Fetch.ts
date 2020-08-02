@@ -1,5 +1,5 @@
 import { fetch, Request } from 'cross-fetch';
-import merge from 'ts-deepmerge';
+import { merge } from 'merge-anything'
 
 // Based on https://www.carlrippon.com/fetch-with-async-await-and-typescript/
 
