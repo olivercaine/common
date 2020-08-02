@@ -1,4 +1,5 @@
 import { fetch, Request } from 'cross-fetch';
+import merge from "ts-deepmerge";
 
 // Based on https://www.carlrippon.com/fetch-with-async-await-and-typescript/
 
@@ -28,23 +29,26 @@ export async function get<T>(
 export async function post<T>(
     path: string,
     body: any,
-    args: RequestInit = { method: 'post', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsDefault: RequestInit = { method: 'post', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsExtra: object,
 ): Promise<IHttpResponse<T>> {
-    return http<T>(new Request(path, args));
+    return http<T>(new Request(path, merge(argsDefault, argsExtra)));
 }
 
 export async function put<T>(
     path: string,
     body: any,
-    args: RequestInit = { method: 'put', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsDefault: RequestInit = { method: 'put', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsExtra: object,
 ): Promise<IHttpResponse<T>> {
-    return http<T>(new Request(path, args));
+    return http<T>(new Request(path, merge(argsDefault, argsExtra)));
 }
 
 export async function del<T>(
     path: string,
     body: any,
-    args: RequestInit = { method: 'delete', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsDefault: RequestInit = { method: 'delete', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
+    argsExtra: object,
 ): Promise<IHttpResponse<T>> {
-    return http<T>(new Request(path, args));
+    return http<T>(new Request(path, merge(argsDefault, argsExtra)));
 }
