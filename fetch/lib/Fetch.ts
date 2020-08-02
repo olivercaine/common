@@ -32,7 +32,7 @@ export async function post<T>(
     argsDefault: RequestInit = { method: 'post', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
     argsExtra?: object,
 ): Promise<IHttpResponse<T>> {
-    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra) }
+    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra); }
     return http<T>(new Request(path, argsDefault));
 }
 
@@ -42,7 +42,7 @@ export async function put<T>(
     argsDefault: RequestInit = { method: 'put', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
     argsExtra?: object,
 ): Promise<IHttpResponse<T>> {
-    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra) }
+    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra); }
     return http<T>(new Request(path, argsDefault));
 }
 
@@ -52,6 +52,6 @@ export async function del<T>(
     argsDefault: RequestInit = { method: 'delete', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) },
     argsExtra?: object,
 ): Promise<IHttpResponse<T>> {
-    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra) }
+    if (argsExtra !== undefined) { argsDefault = merge(argsDefault, argsExtra); }
     return http<T>(new Request(path, argsDefault));
 }
