@@ -33,24 +33,54 @@ describe('Given I have an array of objects with an id', () => {
 });
 
 describe('When searching for an entity by id', () => {
-      it('Then the correct entity is returned', () => {
-          const needle = {
+    it('Then the correct entity is returned', () => {
+        const needle = {
             id: 123,
             name: 'ollie',
-          };
-          const haystack = [
+        };
+        const haystack = [
             {
-              id: 41,
-              name: 'john',
+                id: 41,
+                name: 'john',
             },
             needle, {
-              id: 16,
-              name: 'sam',
+                id: 16,
+                name: 'sam',
             },
-          ];
+        ];
 
-          const result = findById(haystack, needle.id);
+        const result = findById(haystack, needle.id);
 
-          expect(result).to.equal(needle);
-      });
+        expect(result).to.equal(needle);
+    });
+});
+
+describe('Given I have an indexed object', () => {
+    it('Then I should be able to get an entity by id', () => {
+        // Arrange
+        interface IPerson {
+            id: string;
+            name: string;
+        }
+        const dictionary: IDictionary<IPerson> = {
+            1: {
+                id: '1',
+                name: 'Joe',
+            },
+            2: {
+                id: '2',
+                name: 'Sam',
+            },
+            3: {
+                id: '3',
+                name: 'Matt',
+            },
+        };
+
+        // Act
+        const needle = findById(dictionary as any[], '2');
+
+        // Assert
+        expect(needle.name).to.equal('Sam');
+    });
 });

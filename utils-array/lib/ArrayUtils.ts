@@ -12,13 +12,14 @@ export function indexArray<T>(array: T[]): IDictionary<T> {
 }
 
 export function cloneArray<T>(array): T[] {
-  return array.map((a) => ({...a}));
+  return array.map((a) => ({ ...a }));
 }
 
-export const findById = (array: any[], id: number): any => {
+export const findById = (array: any[], id: number | string): any => {
   // tslint:disable-next-line
-  for (var i = 0; i < array.length; i++) {
-      if (array[i].id === id) { return array[i]; }
+  // for (var i = 0; i < array.length; i++) {
+  for (const key in array) {
+    if (array[key].id === id) { return array[key]; }
   }
 };
 
