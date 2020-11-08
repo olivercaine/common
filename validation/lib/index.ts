@@ -18,7 +18,7 @@ export const containsSpecialCharacter = (s: string | null | undefined): boolean 
 };
 
 // Yup
-export const minLength = 8
+export const minLength = 8;
 export const passwordValidation = Yup.string()
     .required('Password is required')
     .test('containsUppercase', 'Password needs at least one uppercase letter', containsUppercase)
