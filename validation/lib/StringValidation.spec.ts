@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { containsLowercase, containsNumber, containsSpecialCharacter, containsUppercase } from '.';
+import { containsLowercase, containsNumber, containsSpecialCharacter, containsUppercase } from './StringValidation';
 
 describe('Given a string', () => {
     it('When checking if it contains uppercase', () => {
@@ -11,7 +11,7 @@ describe('Given a string', () => {
         expect(containsUppercase('string')).to.equal(false);
     });
 
-        it('When checking if it contains lowercase', () => {
+    it('When checking if it contains lowercase', () => {
         // tslint:disable-next-line
         expect(containsLowercase(null)).to.equal(false);
         expect(containsLowercase(undefined)).to.equal(false);
