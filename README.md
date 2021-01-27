@@ -35,4 +35,4 @@ git submodule update --recursive --remote
 
 6. Update the module from root fork
 
-git subtree pull --prefix=client https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
+git subtree pull --prefix=emailer https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
