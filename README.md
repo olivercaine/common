@@ -13,14 +13,14 @@ git subtree add --prefix=utils https://github.com/olivercaine/typescript-library
 2. Update the package name in package.json and package-lock.json:
 
 ```json
-"name": "@common/utils",
+"name": "@olliecaine/utils",
 ```
 
 3. Install the module in a project:
 
 ```sh
-npm i @common/utils@file:common/utils --save
-yarn add @common/emailer@file:common/emailer --save
+npm i @olliecaine/utils@file:common/utils --save
+yarn add @olliecaine/emailer@file:common/emailer --save
 ```
 
 4. Pull updates to the module using:
@@ -32,3 +32,7 @@ git submodule update --recursive --remote
 5. Configure git to automatically pull the submodules:
 
 // TODO
+
+6. Update the module from root fork
+
+git subtree pull --prefix=client https://github.com/olivercaine/typescript-library-boilerplate.git modpack/latest --squash
