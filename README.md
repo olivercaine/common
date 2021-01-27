@@ -31,7 +31,9 @@ git submodule update --recursive --remote
 
 5. Configure git to automatically pull the submodules:
 
-// TODO
+```sh
+git config --global submodule.recurse true
+```
 
 6. Update the module from root fork
 
